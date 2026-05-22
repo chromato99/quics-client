@@ -14,7 +14,7 @@ import (
 
 type RestClient struct {
 	qconf        *quic.Config
-	roundTripper *http3.RoundTripper
+	roundTripper *http3.Transport
 	hclient      *http.Client
 }
 
@@ -25,11 +25,11 @@ func NewRestClient() *RestClient {
 		},
 	}
 
-	restClient.roundTripper = &http3.RoundTripper{
+	restClient.roundTripper = &http3.Transport{
 		TLSClientConfig: &tls.Config{
 			InsecureSkipVerify: true,
 		},
-		QuicConfig: restClient.qconf,
+		QUICConfig: restClient.qconf,
 	}
 
 	restClient.hclient = &http.Client{

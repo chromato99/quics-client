@@ -18,9 +18,9 @@ import (
 
 func RestServerStart(port string) {
 
-	fmt.Println("\t-----------------------------------------\n")
-	fmt.Println("\t           quics-client start\n")
-	fmt.Println("\t-----------------------------------------\n")
+	fmt.Println("\t-----------------------------------------")
+	fmt.Println("\t           quics-client start")
+	fmt.Println("\t-----------------------------------------")
 
 	log.Println("quics-client : starting port " + viper.GetViperEnvVariables("REST_SERVER_PORT"))
 	badger.OpenDB()
@@ -44,7 +44,7 @@ func RestServerStart(port string) {
 
 	server := http3.Server{
 		Handler:    handler,
-		QuicConfig: &qconf,
+		QUICConfig: &qconf,
 		Addr:       "0.0.0.0:" + port,
 	}
 

@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/dgraph-io/badger/v3"
+	"github.com/dgraph-io/badger/v4"
 	"github.com/quic-s/quics-client/pkg/types"
 )
 

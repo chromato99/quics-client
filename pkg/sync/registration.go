@@ -173,7 +173,7 @@ func RegistRootDir(LocalRootDir string, RootDirPW string, Side string) error {
 	rootdir := badger.GetRootDir(LocalRootDir)
 
 	if reflect.ValueOf(rootdir).FieldByName("IsRegistered").Bool() == true {
-		return fmt.Errorf("[RegisterRootDir] Root Directory named ", rootdir.NickName, " is already registered")
+		return fmt.Errorf("[RegisterRootDir] Root Directory named %s is already registered", rootdir.NickName)
 	}
 
 	// Named Transaction

@@ -52,7 +52,7 @@ func StopShare(link string) error {
 		return nil
 	})
 	if err != nil {
-		return fmt.Errorf("quics-client : ", err)
+		return fmt.Errorf("quics-client: %w", err)
 	}
 
 	return nil

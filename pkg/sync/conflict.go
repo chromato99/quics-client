@@ -111,7 +111,7 @@ func ChooseOne(path string, Side string) error {
 		return nil
 	})
 	if err != nil {
-		return fmt.Errorf("[CONFLICT] ", err)
+		return fmt.Errorf("[CONFLICT] %w", err)
 	}
 	return nil
 }
